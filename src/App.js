@@ -1,5 +1,6 @@
 import React from "react";
 import { CardList } from "./components/card-list";
+import { SearchBox } from "./components/search-box";
 import axios from "axios";
 
 import "./App.css";
@@ -38,6 +39,10 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>Drinks</h1>
+        <SearchBox 
+        placeholder = 'Search Product'
+        handleChange = {this.handleChange}
+        />
         <CardList products={filteredProducts}/>
       </div>
     );
