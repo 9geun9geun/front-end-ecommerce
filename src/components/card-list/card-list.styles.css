@@ -1,0 +1,15 @@
+.card-list{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap:20px;
+    margin:0 auto;
+    width: 85vw;
+    background-color:#57837B;
+    background:linear-gradient(
+    to left,
+    
+    rgba(81, 94, 99,1) 0%,
+    rgba(87, 131, 123,1) 100%
+    
+  )
+}
