@@ -1,4 +1,5 @@
 import React from "react";
+import { CardList } from "./components/card-list";
 import axios from "axios";
 
 import "./App.css";
@@ -36,7 +37,8 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <h1> Heading</h1>
+        <h1>Drinks</h1>
+        <CardList products={filteredProducts}/>
       </div>
     );
   }
