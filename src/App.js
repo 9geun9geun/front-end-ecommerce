@@ -7,19 +7,12 @@ import './App.css';
 function App()  {
   const [products, setProducts] = React.useState([]);
 
-  React.useEffect(()=>{
-    async function fetchMyData(){
-      let response = await axios('/info.json')
-      setProducts(response.data)
-      
-    }
-    fetchMyData()
-  })
+  React.useEffect(async () => {
+    const response = await axios('/info.json');
 
-  // React.useEffect(async () => {
-  //   let response = await('/info.json');
-  //    setProducts(response.data);
-  // },[]);
+    setProducts(response.data);
+  },[]);
+
 
   return (
     products ? 
