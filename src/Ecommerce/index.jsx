@@ -7,7 +7,6 @@ import "./index.css";
 export const Ecommerce = (props) => {
   const products = props.products;
   const [selectedOption, setSelectedOption] = React.useState("All");
-  const [searchTerm, setSearchTerm] = React.useState("");
 
   function getAvailableFilterOptions(products) {
     var availableOptions = [];

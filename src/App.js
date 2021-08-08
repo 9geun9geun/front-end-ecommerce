@@ -6,7 +6,7 @@ import './App.css';
 
 function App()  {
   const [products, setProducts] = React.useState([]);
-  const [searchTerm, setSearchTerm] = React.useState("")
+
 
   React.useEffect(async () => {
     const response = await axios('/info.json');
