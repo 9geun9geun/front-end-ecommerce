@@ -12,11 +12,11 @@ export const FilterBox = (props) => {
     }
 
     return (
-        <div class="header">
-            <div class="filter" >
+        <div className="header">
+            <div className="filter" >
                 <span>Filter by: </span>
                 <select name="drinks" id="drinks" onChange={onChange}>
-                    <option value="All" selected="selected"> All</option>
+                    <option value="All" defaultValue="selected"> All</option>
                     {
                         filterOptions.map(option => {
                             return <option value={option}>{option}</option>
@@ -25,7 +25,7 @@ export const FilterBox = (props) => {
                 </select>
             </div>
 
-            <div class="search">
+            <div className="search">
                     
                     <input
                     className="searchinput"
