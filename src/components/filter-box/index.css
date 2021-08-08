@@ -1,0 +1,12 @@
+.header {
+    width: 80%;
+    margin: 40px auto;
+    border: solid 2px black;
+    padding: 20px 40px;
+    background: lightyellow;
+    height: 30px;
+}
+
+.filter {
+    float: right;
+}

@@ -6,7 +6,12 @@ export const Card = (props) => {
   const product = props.product;
   return (
     <div className="card">
-      {product.isSale && <div id="ribbon"> <span id="content">SALE</span></div>}
+      {product.isSale && (
+        <div id="ribbon">
+          {" "}
+          <span id="content">SALE</span>
+        </div>
+      )}
       <img
         src={`${process.env.PUBLIC_URL}/assets/images/${product.productImage}`}
         alt="drink"

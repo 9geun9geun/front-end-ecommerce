@@ -1,52 +1,29 @@
-import React from "react";
-import { CardList } from "./components/card-list";
-import { SearchBox } from "./components/search-box";
-import axios from "axios";
+import React from 'react';
+import {Ecommerce}  from './ecommerce/index.jsx';
+import axios from 'axios';
+ 
+import './App.css';
 
-import "./App.css";
+function App()  {
+  const [products, setProducts] = React.useState([]);
 
-class App extends React.Component {
-  constructor() {
-    super();
+  React.useEffect(async () => {
+    const response = await axios('/info.json');
 
-    this.state = {
-      products: [],
-      searchField: "",
-    };
-  }
+    setProducts(response.data);
+  },[]);
 
-  handleChange(e) {
-    this.setState({ searchField: e.target.value });
-  }
-
-  componentDidMount() {
-    axios.get(`/info.json`).then((res) => {
-      console.log(res);
-      this.setState({ products: res.data });
-    });
-  }
-  render() {
-    const { products, searchField } = this.state;
-    console.log(this.state);
-
-    const filteredProducts = products.filter(function (product) {
-      return (
-        product.productName.toLowerCase().includes(searchField.toLowerCase()) ||
-        product.price.includes(searchField)
-      );
-    });
-
-    return (
-      <div className="App">
-        <h1>Drinks</h1>
-        <SearchBox 
-        placeholder = 'Search Product'
-        handleChange = {this.handleChange}
-        />
-        <CardList products={filteredProducts}/>
-      </div>
-    );
-  }
+  return (
+    products ? 
+      (
+        <div className="App">
+            <Ecommerce products={products}/>
+          </div>
+      )
+    : 
+      null
+  )
 }
 
 export default App;
+
