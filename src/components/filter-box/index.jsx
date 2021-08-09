@@ -1,40 +1,28 @@
-import React from 'react'
+import React from "react";
 
-import './index.scss'
-
+import "./index.scss";
 
 export const FilterBox = (props) => {
-    console.log(props)
-    const {filterOptions, cb} = props;
+  const { filterOptions, cb } = props;
 
-    function onChange(event) {
-        cb(event.target.value);
-    }
+  function onChange(event) {
+    cb(event.target.value);
+  }
 
-    return (
-        <div className="header">
-            <div className="filter" >
-                <span>Filter by: </span>
-                <select name="drinks" id="drinks" onChange={onChange}>
-                    <option value="All" defaultValue="selected"> All</option>
-                    {
-                        filterOptions.map(option => {
-                            return <option value={option}>{option}</option>
-                        })
-                    }
-                </select>
-            </div>
-
-            <div className="search">
-                    
-                    <input
-                    className="searchinput"
-                    type="search"
-                    placeholder = "search" 
-                    
-                    
-                    />
-            </div>
-        </div>
-    )
-}
+  return (
+    <div className="header">
+      <div className="filter">
+        <span>Filter by: </span>
+        <select name="drinks" id="drinks" onChange={onChange}>
+          <option value="All" defaultValue="selected">
+            {" "}
+            All
+          </option>
+          {filterOptions.map((option) => {
+            return <option value={option}>{option}</option>;
+          })}
+        </select>
+      </div>
+    </div>
+  );
+};

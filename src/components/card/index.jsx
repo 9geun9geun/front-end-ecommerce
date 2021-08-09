@@ -8,7 +8,6 @@ export const Card = (props) => {
     <div className="card">
       {product.isSale && (
         <div id="ribbon">
-          {" "}
           <span id="content">SALE</span>
         </div>
       )}
@@ -21,3 +20,4 @@ export const Card = (props) => {
     </div>
   );
 };
+

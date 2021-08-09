@@ -14,7 +14,6 @@ export const Ecommerce = (props) => {
     products.forEach((product) => {
       availableOptions.indexOf(product.type) === -1 &&
         availableOptions.push(product.type);
-        
     });
     return availableOptions;
   }
