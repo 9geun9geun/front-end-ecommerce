@@ -1,5 +1,5 @@
 import React from 'react';
-import {Ecommerce}  from './ecommerce/index.jsx';
+import {Ecommerce}  from './Ecommerce/index.jsx';
 import axios from 'axios';
  
 import './App.css';
